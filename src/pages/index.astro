@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const testimonials = (await getCollection('testimonials'))
+  .filter(t => t.data.featured)
+  .slice(0, 3);
+
+const shows = (await getCollection('shows'))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
+---
+
+<BaseLayout title="Victor Ashveil — Mentalist & Psychological Illusionist">
+  <Header />
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-background via-navy/30 to-background"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(107,79,160,0.15)_0%,transparent_60%)]"></div>
+
+    <!-- Subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, #c9a84c 0, #c9a84c 1px, transparent 0, transparent 50%); background-size: 60px 60px;"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <p class="text-gold text-sm tracking-[0.3em] uppercase mb-8 animate-fade-in">Mentalist & Psychological Illusionist</p>
+
+      <h1 class="font-display text-6xl md:text-8xl font-light leading-tight mb-8 animate-fade-up">
+        What you see<br />
+        <em class="italic text-gold">shapes</em> what you believe
+      </h1>
+
+      <p class="text-text-secondary text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.15s">
+        Victor Ashveil creates experiences that challenge the boundaries between perception,
+        psychology, and the inexplicable — for corporate events, private celebrations, and
+        the theatre stage.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up" style="animation-delay: 0.3s">
+        <a href="/contact" class="px-8 py-3.5 bg-gold text-background font-medium text-sm tracking-wide hover:bg-gold-light transition-colors duration-200">
+          Enquire About Booking
+        </a>
+        <a href="/shows" class="px-8 py-3.5 border border-white/20 text-text-primary text-sm tracking-wide hover:border-gold/50 hover:text-gold transition-colors duration-200">
+          Explore the Shows
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted animate-bounce">
+      <span class="text-xs tracking-widest uppercase">Scroll</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Brief intro -->
+  <section class="py-24 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-gold text-xs tracking-[0.3em] uppercase mb-6">The Work</p>
+          <h2 class="font-display text-4xl md:text-5xl font-light mb-6 leading-tight">
+            Psychology is the only<br />real magic there is
+          </h2>
+          <p class="text-text-secondary leading-relaxed mb-6">
+            Victor Ashveil has spent two decades studying the mechanics of human perception —
+            how attention is captured, how memory is shaped, how certainty can be constructed
+            from thin air. His performances are not puzzles to be solved. They are experiences
+            to be felt.
+          </p>
+          <p class="text-text-secondary leading-relaxed mb-8">
+            From boardrooms to festival stages, from intimate parlour shows to sold-out
+            theatres, the response is always the same: genuine astonishment, followed by a
+            very long conversation about what just happened.
+          </p>
+          <a href="/about" class="text-gold text-sm tracking-wide border-b border-gold/40 pb-0.5 hover:border-gold transition-colors">
+            About Victor →
+          </a>
+        </div>
+
+        <div class="relative">
+          <!-- Placeholder for headshot -->
+          <div class="aspect-[3/4] bg-surface-2 border border-white/5 flex items-center justify-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+            <div class="text-center relative z-10">
+              <div class="font-display text-8xl text-gold/10 select-none">VA</div>
+              <p class="text-text-muted text-xs mt-4">Portrait photography</p>
+            </div>
+            <!-- Decorative corner lines -->
+            <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold/30"></div>
+            <div class="absolute top-4 right-4 w-8 h-8 border-t border-r border-gold/30"></div>
+            <div class="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-gold/30"></div>
+            <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold/30"></div>
+          </div>
+          <!-- Accent block -->
+          <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-dark/30 border border-purple/20 -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shows teaser -->
+  <section class="py-24 bg-surface/40 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">What's Available</p>
+        <h2 class="font-display text-4xl md:text-5xl font-light">Formats & Engagements</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {shows.map(show => (
+          <div class="group p-6 bg-surface border border-white/5 hover:border-gold/20 transition-all duration-300 hover:-translate-y-1">
+            <div class="text-2xl text-gold mb-4 font-display">{show.data.icon}</div>
+            <h3 class="font-display text-xl mb-2 group-hover:text-gold transition-colors">{show.data.title}</h3>
+            <p class="text-text-muted text-sm leading-relaxed">{show.data.subtitle}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/shows" class="text-gold text-sm tracking-wide border-b border-gold/40 pb-0.5 hover:border-gold transition-colors">
+          View all formats →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">What People Say</p>
+        <h2 class="font-display text-4xl md:text-5xl font-light">Reactions</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map(t => (
+          <div class="p-8 border border-white/5 bg-surface/50 relative">
+            <div class="font-display text-5xl text-gold/20 absolute top-4 left-6 leading-none select-none">"</div>
+            <p class="text-text-secondary leading-relaxed mb-6 relative z-10 pt-4">
+              {t.data.quote}
+            </p>
+            <div>
+              <p class="text-text-primary text-sm font-medium">{t.data.name}</p>
+              <p class="text-text-muted text-xs mt-1">{t.data.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-gradient-to-br from-navy/40 via-purple-dark/20 to-background border-t border-white/5">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl md:text-5xl font-light mb-6">
+        Ready to create something<br /><em class="italic text-gold">unforgettable?</em>
+      </h2>
+      <p class="text-text-secondary mb-10 leading-relaxed">
+        Every enquiry is answered personally. Victor takes a limited number of bookings each
+        year to ensure each event receives the attention it deserves.
+      </p>
+      <a href="/contact" class="inline-block px-10 py-4 bg-gold text-background font-medium text-sm tracking-wide hover:bg-gold-light transition-colors duration-200">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

@@ -1,0 +1,29 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 py-12 mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <p class="font-display text-lg text-text-primary">Victor Ashveil</p>
+        <p class="text-sm text-text-muted mt-1">Mentalist & Psychological Illusionist</p>
+      </div>
+
+      <nav class="flex flex-wrap justify-center gap-6">
+        <a href="/" class="text-sm text-text-secondary hover:text-gold transition-colors">Home</a>
+        <a href="/about" class="text-sm text-text-secondary hover:text-gold transition-colors">About</a>
+        <a href="/shows" class="text-sm text-text-secondary hover:text-gold transition-colors">Shows</a>
+        <a href="/blog" class="text-sm text-text-secondary hover:text-gold transition-colors">Journal</a>
+        <a href="/contact" class="text-sm text-text-secondary hover:text-gold transition-colors">Contact</a>
+      </nav>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-text-muted">&copy; {year} Victor Ashveil. All rights reserved.</p>
+      <p class="text-xs text-text-muted">
+        Enquiries: <a href="mailto:booking@victorashveil.com" class="hover:text-gold transition-colors">booking@victorashveil.com</a>
+      </p>
+    </div>
+  </div>
+</footer>

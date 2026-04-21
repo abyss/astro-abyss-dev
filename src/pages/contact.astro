@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Contact — Victor Ashveil"
+  description="Enquire about booking Victor Ashveil for your event. Corporate events, private parties, stage shows, and virtual performances."
+>
+  <Header />
+
+  <!-- Page hero -->
+  <section class="pt-40 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Get in Touch</p>
+      <h1 class="font-display text-5xl md:text-7xl font-light leading-tight">
+        Booking<br /><em class="italic text-gold">Enquiries</em>
+      </h1>
+      <p class="text-text-secondary mt-6 text-lg leading-relaxed max-w-2xl">
+        All enquiries are answered personally. Please include as much detail about your event
+        as you can — date, location, format of event, and approximate audience size — so the
+        response can be genuinely useful.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form + info -->
+  <section class="pb-24 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_2fr] gap-16">
+      <!-- Contact info -->
+      <div class="space-y-8">
+        <div>
+          <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Direct Contact</p>
+          <a href="mailto:booking@victorashveil.com" class="text-text-primary hover:text-gold transition-colors text-sm">
+            booking@victorashveil.com
+          </a>
+        </div>
+
+        <div>
+          <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Response Time</p>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            All enquiries are responded to within two business days. For urgent bookings,
+            please indicate the date in your message.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Availability</p>
+          <p class="text-text-secondary text-sm leading-relaxed">
+            Victor takes a limited number of bookings each year. Early enquiries — three to
+            six months in advance for significant events — are strongly recommended.
+          </p>
+        </div>
+
+        <div>
+          <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">Based In</p>
+          <p class="text-text-secondary text-sm">Edinburgh, Scotland</p>
+          <p class="text-text-muted text-xs mt-1">Available UK-wide and internationally</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          class="space-y-6"
+        >
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="event-type" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Event Type</label>
+              <select
+                id="event-type"
+                name="event_type"
+                required
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors appearance-none"
+              >
+                <option value="" disabled selected class="text-text-muted">Select a format</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="private">Private Party</option>
+                <option value="stage">Stage Show</option>
+                <option value="virtual">Virtual Show</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+            <div>
+              <label for="event-date" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Event Date</label>
+              <input
+                type="date"
+                id="event-date"
+                name="event_date"
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label for="location" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Location</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted"
+                placeholder="City / Venue"
+              />
+            </div>
+            <div>
+              <label for="audience-size" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Audience Size</label>
+              <select
+                id="audience-size"
+                name="audience_size"
+                class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors appearance-none"
+              >
+                <option value="" disabled selected>Approximate number</option>
+                <option value="under-20">Under 20</option>
+                <option value="20-50">20 – 50</option>
+                <option value="50-150">50 – 150</option>
+                <option value="150-500">150 – 500</option>
+                <option value="500+">500+</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs text-text-secondary tracking-wide uppercase mb-2">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full bg-surface border border-white/10 text-text-primary px-4 py-3 text-sm focus:outline-none focus:border-gold/50 transition-colors placeholder:text-text-muted resize-none"
+              placeholder="Tell me about your event — the more detail you can provide, the more useful my reply will be."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-10 py-3.5 bg-gold text-background font-medium text-sm tracking-wide hover:bg-gold-light transition-colors duration-200"
+          >
+            Send Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

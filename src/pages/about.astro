@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="About — Victor Ashveil"
+  description="The story, philosophy, and craft behind Victor Ashveil's work as a mentalist and psychological illusionist."
+>
+  <Header />
+
+  <!-- Page hero -->
+  <section class="pt-40 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-gold text-xs tracking-[0.3em] uppercase mb-4">The Performer</p>
+      <h1 class="font-display text-5xl md:text-7xl font-light leading-tight">
+        About<br /><em class="italic text-gold">Victor</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Bio section -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-16">
+      <!-- Headshot -->
+      <div class="relative">
+        <div class="aspect-[3/4] bg-surface-2 border border-white/5 flex items-center justify-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+          <div class="text-center relative z-10">
+            <div class="font-display text-8xl text-gold/10 select-none">VA</div>
+            <p class="text-text-muted text-xs mt-4">Portrait photography</p>
+          </div>
+          <div class="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold/30"></div>
+          <div class="absolute top-4 right-4 w-8 h-8 border-t border-r border-gold/30"></div>
+          <div class="absolute bottom-4 left-4 w-8 h-8 border-b border-l border-gold/30"></div>
+          <div class="absolute bottom-4 right-4 w-8 h-8 border-b border-r border-gold/30"></div>
+        </div>
+        <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-purple-dark/30 border border-purple/20 -z-10"></div>
+      </div>
+
+      <!-- Bio text -->
+      <div class="space-y-6 text-text-secondary leading-relaxed">
+        <p class="text-text-primary text-xl font-light leading-relaxed">
+          Victor Ashveil began his study of mentalism at fifteen, in a library in the north of
+          England, with a book he found by accident and didn't understand for three years.
+        </p>
+
+        <p>
+          What began as an obsession with conjuring evolved, over two decades, into something
+          more precise: a forensic interest in the architecture of belief. How do convictions
+          form? How are they dismantled? What does it feel like to be absolutely certain of
+          something that isn't true?
+        </p>
+
+        <p>
+          These are the questions that animate his performances. Not "how did he do it?" — that
+          question dissolves quickly, and the answer is always unsatisfying — but "why did I
+          believe it?" That question tends to stay.
+        </p>
+
+        <p>
+          Victor has performed across the United Kingdom and internationally, for audiences
+          ranging from twelve people in a drawing room to two thousand in a concert hall. His
+          stage show <em>An Evening with Victor Ashveil</em> completed its third national tour
+          in 2023 and has been called "the most psychologically unsettling evening of theatre
+          currently running" by one reviewer who clearly meant it as a compliment.
+        </p>
+
+        <p>
+          He has consulted on psychological profiling for a television production, delivered
+          talks on perception and attention at conferences in the fields of law, finance, and
+          technology, and written occasionally for publications he prefers not to name because
+          it sounds insufferable.
+        </p>
+
+        <p>
+          He lives in Edinburgh. He does not have a rabbit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="py-24 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-gold text-xs tracking-[0.3em] uppercase mb-6">The Approach</p>
+        <h2 class="font-display text-4xl font-light mb-10">A philosophy of wonder</h2>
+
+        <div class="space-y-8">
+          <div class="border-l-2 border-gold/30 pl-8">
+            <h3 class="font-display text-2xl mb-3">Respect for the audience</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Every performance begins with the assumption that the audience is intelligent,
+              perceptive, and paying attention. The work does not rely on inattention or
+              gullibility. It relies on the elegant, well-documented fact that intelligent,
+              perceptive, attentive people can be astonished too.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold/30 pl-8">
+            <h3 class="font-display text-2xl mb-3">No supernatural claims</h3>
+            <p class="text-text-secondary leading-relaxed">
+              Victor does not claim psychic ability. He does not suggest that what you are
+              witnessing is anything other than a performance — albeit one whose mechanics
+              will remain pleasurably obscure. The wonder is real. The pretence of impossible
+              powers would insult both the audience and the craft.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold/30 pl-8">
+            <h3 class="font-display text-2xl mb-3">Every show is different</h3>
+            <p class="text-text-secondary leading-relaxed">
+              The core framework of each performance is fixed. Everything else responds to
+              the room — to the specific people present, their responses, their hesitations,
+              the particular atmosphere of that evening. No two performances are the same,
+              which is why people who have seen the show once tend to want to see it again.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA strip -->
+  <section class="py-20 bg-surface/40 border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl font-light mb-4">Interested in booking?</h2>
+      <p class="text-text-secondary mb-8">Victor takes limited engagements to ensure each event receives full attention.</p>
+      <a href="/contact" class="inline-block px-8 py-3.5 bg-gold text-background font-medium text-sm tracking-wide hover:bg-gold-light transition-colors">
+        Make an Enquiry
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
